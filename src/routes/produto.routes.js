@@ -1,9 +1,9 @@
-import { Router } from "express";
-import uploadImage from "../middlewares/uploadimage.middleware.js";
+import express from 'express';
+const router = express.Router();
 import produtoController from "../controllers/produto.controller.js";
-
-const produtoRoutes = Router();
+import uploadImage from "../middlewares/uploadimage.middleware.js";
 
 produtoRoutes.post('/produtos/images', uploadImage, produtoController.upload);
+
 
 export default produtoRoutes;
